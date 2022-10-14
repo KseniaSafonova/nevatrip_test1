@@ -3,40 +3,40 @@ import Card from './Card';
 
 let cards = [
   {
-    new: true, allYear: false, imageLink: '/img1.png',
+    newTrip: true, allYearTrip: false, imageLink: '/img1.png',
     title: 'Обзорная экскурсия по рекам и каналам с остановками Hop on Hop Off 2020',
     journeyTime: '2 часа',
     ticketIsValid: 'Билет на целый день',
     tripsNumber: 'Неограниченное число катаний',
     stopsNumber: '6 остановок у главных достопримечательностей',
     startTime: 'Ближайший рейс сегодня',
-    startTimeArray: ['12:00', '13:00', '14:00', '15:00'],
+    startTimeArray: ['11', '12', '13', '14', '15', '16'],
     price: '900',
     paymentOnBoard: true,
     priceOnBoard: '1200'
   },
   {
-    new: false, allYear: true, imageLink: '/img2.png',
+    newTrip: false, allYearTrip: true, imageLink: '/img2.png',
     title: 'Обзорная экскурсия по рекам и каналам с остановками Hop on Hop Off 2020',
     journeyTime: '2 часа',
     ticketIsValid: 'Билет на целый день',
     tripsNumber: 'Неограниченное число катаний',
     stopsNumber: '6 остановок у главных достопримечательностей',
     startTime: 'Ближайший рейс сегодня',
-    startTimeArray: ['12:00', '13:00', '14:00', '15:00'],
+    startTimeArray: ['11', '12', '13', '14', '15', '16', '17'],
     price: '900',
     paymentOnBoard: true,
     priceOnBoard: '1200'
   },
   {
-    new: false, allYear: false, imageLink: '/img3.png',
+    newTrip: false, allYearTrip: false, imageLink: '/img3.png',
     title: 'Обзорная экскурсия по рекам и каналам с остановками Hop on Hop Off 2020',
     journeyTime: '2 часа',
     ticketIsValid: 'Билет на целый день',
     tripsNumber: 'Неограниченное число катаний',
     stopsNumber: '6 остановок у главных достопримечательностей',
     startTime: 'Ближайший рейс сегодня',
-    startTimeArray: ['12:00', '13:00', '14:00', '15:00'],
+    startTimeArray: ['11', '12', '13', '14', '15', '16', '17'],
     price: '900',
     paymentOnBoard: false,
     priceOnBoard: '1200'
@@ -49,8 +49,8 @@ function App() {
       {
         cards.map((card) =>
           <Card
-            new={card.new}
-            allYear={card.allYear}
+            newTrip={card.newTrip}
+            allYearTrip={card.allYearTrip}
             imageLink={require('./images' + card.imageLink)}
             title={card.title}
             journeyTime={card.journeyTime}

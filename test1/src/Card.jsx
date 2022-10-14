@@ -7,6 +7,8 @@ import rubS from './images/rubS.svg'
 
 export default function Card(props) {
     const {
+        newTrip,
+        allYearTrip,
         imageLink,
         title,
         journeyTime,
@@ -21,9 +23,21 @@ export default function Card(props) {
     } = props;
     return (
         <div className={style.card}>
-            <div>
-                <img src={imageLink} />
-            </div>
+            {
+                newTrip ?
+                    <div>
+                        <div className={style.newTrip}>НОВИНКА</div>
+                        <img src={imageLink} />
+                    </div>
+                    :
+                    allYearTrip ?
+                        <div>
+                            <div className={style.allYearTrip}>КРУГЛЫЙ ГОД</div>
+                            <img src={imageLink} />
+                        </div>
+                        :
+                        <div><img src={imageLink} /></div>
+            }
             <div className={style.description}>
                 <div className={style.title}>{title}</div>
                 <div className={style.clock}><img src={clock} alt="" /><div>{journeyTime}</div></div>
@@ -32,7 +46,12 @@ export default function Card(props) {
                 <div><img src={item} alt="*" />{stopsNumber}</div>
                 <div><img src={item} alt="*" />{startTime}
                     {
-                        startTimeArray.map((time) => <span className={style.startTimeArray}>{time}</span>)
+                        startTimeArray.map((time) =>
+                            (time - new Date().getHours() > 0)
+                                ?
+                                <span className={style.startTimeArray}>{time}:00</span>
+                                :
+                                <></>)
                     }
                 </div>
                 <div className={style.bottomBlock}>
@@ -49,8 +68,6 @@ export default function Card(props) {
                     <Button />
                 </div>
             </div>
-
-
         </div>
     )
 }

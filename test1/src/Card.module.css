@@ -12,6 +12,34 @@
     font-family: 'Open Sans';
 }
 
+.newTrip {
+    height: 42px;
+    width: 154px;
+    background-color: #099CE8;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffff;
+    padding: 12px 34px 14px 35px;
+    box-sizing: border-box;
+    position: absolute;
+    margin-top: 46px;
+}
+
+.allYearTrip {
+    height: 45px;
+    width: 180px;
+    background-color: #FFD83B;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: 600;
+    color: #323232;
+    padding: 13px 8px 11px 33px;
+    box-sizing: border-box;
+    position: absolute;
+    margin-top: 59px;
+}
+
 .description {
     display: grid;
     margin-left: 23px;
