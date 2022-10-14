@@ -80,10 +80,32 @@
     margin-left: 10px;
 }
 
+.buttonMore {
+    height: 32px;
+    width: 73px;
+    border-radius: 11px;
+    border: none;
+    background: #C5DCFF;
+    padding: 5px 17px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
 .startTimeArray:hover {
     background: #6BA6FF;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
+
+.buttonMore:hover {
+    background: #6BA6FF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* 
+.hiddenTimesArray {
+    display: none;
+} */
 
 .bottomBlock {
     display: flex;

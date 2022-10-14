@@ -4,6 +4,7 @@ import item from './images/item.svg';
 import clock from './images/clock.svg';
 import rubL from './images/rubL.svg';
 import rubS from './images/rubS.svg'
+import { useState } from 'react';
 
 export default function Card(props) {
     const {
@@ -21,6 +22,13 @@ export default function Card(props) {
         paymentOnBoard,
         priceOnBoard
     } = props;
+
+    const [hideTimesArray, showHiddenTimes] = useState(true);
+
+    const showAllTimes = () => {
+        showHiddenTimes(!hideTimesArray)
+    }
+
     return (
         <div className={style.card}>
             {
@@ -47,17 +55,36 @@ export default function Card(props) {
                 <div><img src={item} alt="*" />{startTime}
                     {
                         startTimeArray.map((time) =>
-                            (time - new Date().getHours() > 0)
+                            (0 < time - new Date().getHours() && time - new Date().getHours() < 4)
                                 ?
-                                <span className={style.startTimeArray}>{time}:00</span>
+                                <>
+                                    <span className={style.startTimeArray}>{time}:00</span>
+                                </>
                                 :
                                 <></>)
+                    }
+                    <button className={style.buttonMore} onClick={showAllTimes}>ещё...</button>
+                    {
+                        hideTimesArray ?
+                            <></>
+                            :
+                            <div>
+                                {
+                                    startTimeArray.map((time) =>
+                                        (time - new Date().getHours() >= 4)
+                                            ?
+                                            <>
+                                                <span className={style.startTimeArray}>{time}:00</span>
+                                            </>
+                                            :
+                                            <></>)
+                                }
+                            </div>
                     }
                 </div>
                 <div className={style.bottomBlock}>
                     {
-                        paymentOnBoard
-                            ?
+                        paymentOnBoard ?
                             <div>
                                 <div className={style.price}>{price}<img src={rubL}></img></div>
                                 <div className={style.priceOnBoard}>{priceOnBoard}<img src={rubS}></img><div>на причале</div></div>
