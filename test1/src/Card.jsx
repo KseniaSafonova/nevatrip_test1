@@ -33,54 +33,63 @@ export default function Card(props) {
         <div className={style.card}>
             {
                 newTrip ?
-                    <div>
+                    <div className={style.cardImg}>
                         <div className={style.newTrip}>НОВИНКА</div>
                         <img src={imageLink} />
                     </div>
                     :
                     allYearTrip ?
-                        <div>
+                        <div className={style.cardImg}>
                             <div className={style.allYearTrip}>КРУГЛЫЙ ГОД</div>
                             <img src={imageLink} />
                         </div>
                         :
-                        <div><img src={imageLink} /></div>
+                        <div className={style.cardImg}><img src={imageLink} /></div>
             }
             <div className={style.description}>
                 <div className={style.title}>{title}</div>
-                <div className={style.clock}><img src={clock} alt="" /><div>{journeyTime}</div></div>
-                <div><img src={item} alt="*" />{ticketIsValid}</div>
-                <div><img src={item} alt="*" />{tripsNumber}</div>
-                <div><img src={item} alt="*" />{stopsNumber}</div>
-                <div><img src={item} alt="*" />{startTime}
-                    {
-                        startTimeArray.map((time) =>
-                            (0 < time - new Date().getHours() && time - new Date().getHours() < 4)
-                                ?
-                                <>
-                                    <span className={style.startTimeArray}>{time}:00</span>
-                                </>
+                <div className={style.clock}><img src={clock} alt="" className={style.clockImg} /><div>{journeyTime}</div></div>
+                <div className={style.list}><div><img src={item} alt="*" /></div><div>{ticketIsValid}</div></div>
+                <div className={style.list}><div><img src={item} alt="*" /></div><div>{tripsNumber}</div></div>
+                <div className={style.list}><div><img src={item} alt="*" /></div><div>{stopsNumber}</div></div>
+                <div className={style.list}>
+                    <div><img src={item} alt="*" /></div>
+                    <div className={style.startTimes}>
+                        <div>{startTime}</div>
+                        <div>
+                            {
+                                startTimeArray.map((time) =>
+                                    (0 < time - new Date().getHours() && time - new Date().getHours() < 4)
+                                        ?
+                                        <>
+                                            <span className={style.startTimeArray}>{time}:00</span>
+                                        </>
+                                        :
+                                        <></>)
+                            }
+                            <button className={style.buttonMore} onClick={showAllTimes}>ещё...</button>
+                        </div>
+
+                    </div>
+                    <div>
+                        {
+                            hideTimesArray ?
+                                <></>
                                 :
-                                <></>)
-                    }
-                    <button className={style.buttonMore} onClick={showAllTimes}>ещё...</button>
-                    {
-                        hideTimesArray ?
-                            <></>
-                            :
-                            <div>
-                                {
-                                    startTimeArray.map((time) =>
-                                        (time - new Date().getHours() >= 4)
-                                            ?
-                                            <>
-                                                <span className={style.startTimeArray}>{time}:00</span>
-                                            </>
-                                            :
-                                            <></>)
-                                }
-                            </div>
-                    }
+                                <div>
+                                    {
+                                        startTimeArray.map((time) =>
+                                            (time - new Date().getHours() >= 4)
+                                                ?
+                                                <>
+                                                    <span className={style.startTimeArray}>{time}:00</span>
+                                                </>
+                                                :
+                                                <></>)
+                                    }
+                                </div>
+                        }
+                    </div>
                 </div>
                 <div className={style.bottomBlock}>
                     {
@@ -95,6 +104,6 @@ export default function Card(props) {
                     <Button />
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

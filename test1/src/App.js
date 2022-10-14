@@ -10,7 +10,7 @@ let cards = [
     tripsNumber: 'Неограниченное число катаний',
     stopsNumber: '6 остановок у главных достопримечательностей',
     startTime: 'Ближайший рейс сегодня',
-    startTimeArray: ['11', '12', '13', '14', '15', '16', '17', '18', '19'],
+    startTimeArray: ['11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21'],
     price: '900',
     paymentOnBoard: true,
     priceOnBoard: '1200'
@@ -23,7 +23,7 @@ let cards = [
     tripsNumber: 'Неограниченное число катаний',
     stopsNumber: '6 остановок у главных достопримечательностей',
     startTime: 'Ближайший рейс сегодня',
-    startTimeArray: ['11', '12', '13', '14', '15', '16', '17', '18'],
+    startTimeArray: ['11', '12', '13', '14', '15', '16', '17', '18', '19', '20'],
     price: '900',
     paymentOnBoard: true,
     priceOnBoard: '1200'
