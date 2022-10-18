@@ -4,8 +4,8 @@ import Card from './Card';
 let cards = [
   {
     newTrip: true, allYearTrip: false, imageLink: '/img1.png',
-    title: 'Обзорная экскурсия по рекам и каналам с остановками Hop on Hop Off 2020',
     journeyTime: '2 часа',
+    title: 'Обзорная экскурсия по рекам и каналам с остановками Hop on Hop Off 2020',
     ticketIsValid: 'Билет на целый день',
     tripsNumber: 'Неограниченное число катаний',
     stopsNumber: '6 остановок у главных достопримечательностей',
@@ -17,8 +17,8 @@ let cards = [
   },
   {
     newTrip: false, allYearTrip: true, imageLink: '/img2.png',
-    title: 'Обзорная экскурсия по рекам и каналам с остановками Hop on Hop Off 2020',
     journeyTime: '2 часа',
+    title: 'Обзорная экскурсия по рекам и каналам с остановками Hop on Hop Off 2020',
     ticketIsValid: 'Билет на целый день',
     tripsNumber: 'Неограниченное число катаний',
     stopsNumber: '6 остановок у главных достопримечательностей',
@@ -30,8 +30,8 @@ let cards = [
   },
   {
     newTrip: false, allYearTrip: false, imageLink: '/img3.png',
-    title: 'Обзорная экскурсия по рекам и каналам с остановками Hop on Hop Off 2020',
     journeyTime: '2 часа',
+    title: 'Обзорная экскурсия по рекам и каналам с остановками Hop on Hop Off 2020',
     ticketIsValid: 'Билет на целый день',
     tripsNumber: 'Неограниченное число катаний',
     stopsNumber: '6 остановок у главных достопримечательностей',
