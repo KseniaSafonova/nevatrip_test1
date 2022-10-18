@@ -53,7 +53,7 @@ export default function Card(props) {
                     paymentOnBoard ?
                         <div>
                             <div className={style.price}>{price}<img src={rubL}></img></div>
-                            <div className={style.priceOnBoard}>{priceOnBoard}<img src={rubS}></img><div>на причале</div></div>
+                            <div className={style.priceOnBoard}>{priceOnBoard}<img src={rubS}></img><span> р </span>на причале</div>
                         </div>
                         :
                         <div className={style.priceOnCenter}>{price}<img src={rubL}></img></div>

@@ -56,33 +56,34 @@ export default function Description(props) {
                                     (0 < time - new Date().getHours() && time - new Date().getHours() < 4)
                                         ?
                                         <>
-                                            <span className={style.startTimeArray}>{time}:00</span>
+                                            <div className={style.timesArrayItem}>{time}:00</div>
                                         </>
                                         :
                                         <></>)
                             }
                             <button className={style.buttonMore} onClick={showAllTimes}>ещё...</button>
+
+                            {
+                                hideTimesArray ?
+                                    <></>
+                                    :
+                                    <>
+                                        {
+                                            startTimeArray.map((time) =>
+                                                (time - new Date().getHours() >= 4)
+                                                    ?
+                                                    <>
+                                                        <div className={style.timesArrayItem}>{time}:00</div>
+                                                    </>
+                                                    :
+                                                    <></>)
+                                        }
+                                    </>
+                            }
+
                         </div>
                     </div>
-                    <div>
-                        {
-                            hideTimesArray ?
-                                <></>
-                                :
-                                <div>
-                                    {
-                                        startTimeArray.map((time) =>
-                                            (time - new Date().getHours() >= 4)
-                                                ?
-                                                <>
-                                                    <span className={style.startTimeArray}>{time}:00</span>
-                                                </>
-                                                :
-                                                <></>)
-                                    }
-                                </div>
-                        }
-                    </div>
+
                 </div>
             </div>
         </div>

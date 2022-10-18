@@ -88,7 +88,7 @@
     display: flex;
 }
 
-.startTimeArray {
+.timesArrayItem {
     height: 28px;
     width: 73px;
     border-radius: 11px;
@@ -108,7 +108,7 @@
     font-size: 16px;
 }
 
-.startTimeArray:hover {
+.timesArrayItem:hover {
     background: #6BA6FF;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
@@ -120,9 +120,7 @@
 
 .bottomBlock {
     display: flex;
-    padding-top: 10px;
-    box-sizing: border-box;
-
+    /* box-sizing: border-box; */
 }
 
 .price {
@@ -208,10 +206,9 @@
     }
 
     .description {
-        /* display: block; */
         margin-left: 13px;
-        margin-top: 15px;
-        height: 250px;
+        margin-top: 0px;
+        height: 270px;
     }
 
     .description div {
@@ -257,19 +254,21 @@
     }
 
     .startTimesArray {
-        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 10px;
         width: 300px;
-        border: 1px solid red;
+        height: 60px;
     }
 
-    .startTimeArray {
+    .timesArrayItem {
         border-radius: 11px;
         padding: 4px 17px 4px 15px;
         margin-left: 7px;
         width: 63px;
         height: 24px;
         background: #D9E8FF;
-
+        box-sizing: border-box;
     }
 
     .buttonMore {
@@ -285,36 +284,47 @@
     .price {
         font-size: 30px;
         font-weight: 400;
-        border: 1px solid red;
+        padding-left: 19px;
     }
 
     .priceOnCenter {
-        padding-top: 15px;
+        margin-top: 10px;
+        margin-left: 19px;
         box-sizing: border-box;
-        border: 1px solid red;
     }
 
     .priceOnBoard {
-        font-family: 'Open Sans';
-        font-size: 14px;
-        font-weight: 400;
         margin-top: 5px;
-        border: 1px solid red;
+        padding-left: 19px;
+        font-family: 'Open Sans';
+        font-size: 10px;
+        font-weight: 400;
+        width: 100px;
+    }
+
+    .priceOnBoard div {
+        font-family: 'Open Sans';
+        font-size: 10px;
+        font-weight: 400;
+    }
+
+    .price img {
+        height: 23px;
+    }
+
+    .priceOnBoard img {
+        display: none;
     }
 
     .bottomBlock {
-        display: flex;
-        /* padding-top: -50px; */
         box-sizing: border-box;
-        border: 1px solid red;
-        height: 70px;
-        margin-top: 15px;
+        height: 50px;
+        padding-right: 1px;
     }
 
     .bottomBlock img {
         height: 23px;
         width: 17px;
-        border: 1px solid red;
     }
 
     .button {
