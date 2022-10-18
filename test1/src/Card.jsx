@@ -39,27 +39,29 @@ export default function Card(props) {
                         :
                         <div className={style.cardImg}><img src={imageLink} /></div>
             }
-            <Description
-                title={title}
-                journeyTime={journeyTime}
-                ticketIsValid={ticketIsValid}
-                tripsNumber={tripsNumber}
-                stopsNumber={stopsNumber}
-                startTime={startTime}
-                startTimeArray={startTimeArray} />
+            <div>
+                <Description
+                    title={title}
+                    journeyTime={journeyTime}
+                    ticketIsValid={ticketIsValid}
+                    tripsNumber={tripsNumber}
+                    stopsNumber={stopsNumber}
+                    startTime={startTime}
+                    startTimeArray={startTimeArray} />
 
-            <div className={style.bottomBlock}>
-                {
-                    paymentOnBoard ?
-                        <div>
-                            <div className={style.price}>{price}<img src={rubL}></img></div>
-                            <div className={style.priceOnBoard}>{priceOnBoard}<img src={rubS}></img><span> р </span>на причале</div>
-                        </div>
-                        :
-                        <div className={style.priceOnCenter}>{price}<img src={rubL}></img></div>
-                }
-                <Button />
-            </div>
-        </div >
+                <div className={style.bottomBlock}>
+                    {
+                        paymentOnBoard ?
+                            <div>
+                                <div className={style.price}>{price}<img src={rubL}></img></div>
+                                <div className={style.priceOnBoard}>{priceOnBoard}<img src={rubS}></img><span> р </span> на причале</div>
+                            </div>
+                            :
+                            <div className={style.priceOnCenter}>{price}<img src={rubL}></img></div>
+                    }
+                    <Button />
+                </div>
+            </div >
+        </div>
     )
 }

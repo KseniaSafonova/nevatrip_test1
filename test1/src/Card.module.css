@@ -2,6 +2,7 @@
 
 .card {
     display: flex;
+    flex-wrap: wrap;
     height: 370px;
     width: 1070px;
     border-radius: 15px;
@@ -41,7 +42,7 @@
 }
 
 .description {
-    /* display: block; */
+    display: grid;
     margin-left: 23px;
 }
 
@@ -62,7 +63,7 @@
     font-weight: 400;
     font-size: 18px;
     color: #343434;
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .clock {
@@ -70,6 +71,7 @@
     font-size: 14px;
     font-weight: 400;
     color: #9E9E9E;
+    margin-top: 10px;
 }
 
 .clock div {
@@ -88,17 +90,29 @@
     display: flex;
 }
 
+.startTimesArray {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 60px;
+    position: absolute;
+    /* padding-top: 30px; */
+    margin-left: 230px;
+}
+
 .timesArrayItem {
-    height: 28px;
-    width: 73px;
     border-radius: 11px;
-    background: #C5DCFF;
-    padding: 4px 17px 4px 15px;
-    /* margin-left: 10px; */
+    margin-left: 5px;
+    text-align: center;
+    width: 73px;
+    height: 28px;
+    background: #D9E8FF;
+    box-sizing: border-box;
+    margin-top: 2px;
 }
 
 .buttonMore {
-    height: 35px;
+    height: 28px;
     width: 73px;
     border-radius: 11px;
     border: none;
@@ -106,6 +120,7 @@
     padding: 3px 17px;
     margin-left: 10px;
     font-size: 16px;
+    margin-top: 2px;
 }
 
 .timesArrayItem:hover {
@@ -120,7 +135,7 @@
 
 .bottomBlock {
     display: flex;
-    /* box-sizing: border-box; */
+    margin-top: 30px;
 }
 
 .price {
@@ -128,6 +143,7 @@
     font-size: 36px;
     font-weight: 400;
     line-height: 20px;
+    margin-left: 21px;
 }
 
 .priceOnCenter {
@@ -136,6 +152,7 @@
     font-weight: 400;
     line-height: 20px;
     margin-top: 15px;
+    margin-left: 21px;
 }
 
 .priceOnBoard {
@@ -143,10 +160,15 @@
     font-size: 14px;
     font-weight: 400;
     margin-top: 5px;
+    margin-left: 21px;
 }
 
 .priceOnBoard img {
     margin-bottom: -1px;
+}
+
+.priceOnBoard span {
+    visibility: hidden;
 }
 
 .priceOnBoard div {
@@ -205,6 +227,19 @@
         padding: 8px 16px;
     }
 
+    .clock {
+        display: flex;
+        margin-left: 0px;
+        margin-top: -20px;
+    }
+
+    .clock div {
+        width: 50px;
+        height: 15px;
+        margin-left: -8px;
+        margin-top: -2px;
+    }
+
     .description {
         margin-left: 13px;
         margin-top: 0px;
@@ -212,7 +247,6 @@
     }
 
     .description div {
-        margin-top: 0px;
         font-size: 14px;
     }
 
@@ -221,19 +255,7 @@
         width: 317px;
         font-weight: 600;
         font-size: 14px;
-        margin-top: 10px;
-    }
-
-    .clock {
-        display: flex;
-        padding-bottom: 20px;
-        margin-left: 0px;
-    }
-
-    .clock div {
-        width: 50px;
-        margin-left: -8px;
-        margin-top: -2px;
+        margin-top: -70px;
     }
 
     .description img {
@@ -247,6 +269,8 @@
         color: #4B4B4B;
         height: 45px;
         width: 275px;
+        margin-top: -120px;
+        margin-left: 13px;
     }
 
     .startTimes {
@@ -256,29 +280,32 @@
     .startTimesArray {
         display: flex;
         flex-wrap: wrap;
-        padding-top: 10px;
+        padding-top: 20px;
         width: 300px;
         height: 60px;
+        position: absolute;
+        margin-left: 0px;
+        margin-top: 0px;
     }
 
     .timesArrayItem {
         border-radius: 11px;
         padding: 4px 17px 4px 15px;
-        margin-left: 7px;
+        margin-left: 5px;
         width: 63px;
         height: 24px;
         background: #D9E8FF;
         box-sizing: border-box;
+        margin-top: 2px;
     }
 
     .buttonMore {
-        padding: 5px 17px;
-        margin-left: 10px;
-        margin-bottom: 10px;
+        text-align: center;
         font-size: 14px;
         width: 63px;
         height: 24px;
         background: #D9E8FF;
+        margin-top: 2px;
     }
 
     .price {
@@ -316,10 +343,15 @@
         display: none;
     }
 
+    .priceOnBoard span {
+        visibility: visible;
+    }
+
     .bottomBlock {
         box-sizing: border-box;
         height: 50px;
         padding-right: 1px;
+        margin-top: 0px;
     }
 
     .bottomBlock img {

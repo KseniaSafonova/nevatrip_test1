@@ -5,9 +5,6 @@ import { useState } from 'react';
 
 export default function Description(props) {
     const {
-        newTrip,
-        allYearTrip,
-        imageLink,
         title,
         journeyTime,
         ticketIsValid,
@@ -15,9 +12,6 @@ export default function Description(props) {
         stopsNumber,
         startTime,
         startTimeArray,
-        price,
-        paymentOnBoard,
-        priceOnBoard
     } = props;
 
     const [hideTimesArray, showHiddenTimes] = useState(true);
@@ -53,7 +47,7 @@ export default function Description(props) {
                         <div className={style.startTimesArray}>
                             {
                                 startTimeArray.map((time) =>
-                                    (0 < time - new Date().getHours() && time - new Date().getHours() < 4)
+                                    (0 < time - new Date().getHours() && time - new Date().getHours() < 3)
                                         ?
                                         <>
                                             <div className={style.timesArrayItem}>{time}:00</div>
@@ -61,16 +55,14 @@ export default function Description(props) {
                                         :
                                         <></>)
                             }
-                            <button className={style.buttonMore} onClick={showAllTimes}>ещё...</button>
-
                             {
                                 hideTimesArray ?
-                                    <></>
+                                    <><button className={style.buttonMore} onClick={showAllTimes}>more...</button></>
                                     :
                                     <>
                                         {
                                             startTimeArray.map((time) =>
-                                                (time - new Date().getHours() >= 4)
+                                                (time - new Date().getHours() >= 3)
                                                     ?
                                                     <>
                                                         <div className={style.timesArrayItem}>{time}:00</div>
@@ -78,14 +70,13 @@ export default function Description(props) {
                                                     :
                                                     <></>)
                                         }
+                                        <button className={style.buttonMore} onClick={showAllTimes}>close</button>
                                     </>
                             }
-
                         </div>
                     </div>
-
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
