@@ -44,6 +44,7 @@ export default function Description(props) {
                     <div><img src={item} alt="*" /></div>
                     <div className={style.startTimes}>
                         <div>{startTime}</div>
+                        {/* Пользователь видит только доступное для брони время, более раннее время не выводится на экран */}
                         <div className={style.startTimesArray}>
                             {
                                 startTimeArray.map((time) =>

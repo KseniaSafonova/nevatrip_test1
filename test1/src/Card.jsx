@@ -2,7 +2,6 @@ import style from './Card.module.css';
 import Button from './Button';
 import rubL from './images/rubL.svg';
 import rubS from './images/rubS.svg'
-
 import Description from './Description';
 
 export default function Card(props) {
